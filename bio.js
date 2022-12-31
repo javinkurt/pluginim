@@ -3,10 +3,10 @@ let {Module} = require('../main');
 Credit: javinkurt/#
 Module({
 pattern: 'autobio ?(.*)',
-fromMe: false
+fromMe: true
 */
 let on_aano = false
-Module({on:"text",fromMe:false},async (m)=>{
+Module({on:"text",fromMe:true},async (m)=>{
 if (on_aano=== true || on_aano === null) return;
 if (m.message.toLowerCase() == "autobio off") {
 on_aano = null
@@ -21,5 +21,5 @@ return "Done"
 }
 m.jid = m.client.user.id
 await m.send("OTO bio aktif!");
-let bioSetter = setInterval(setAbout,9999)
+let bioSetter = setInterval(setAbout,15)
 })
