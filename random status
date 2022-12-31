@@ -1,0 +1,12 @@
+// Made with ❤ by JOHN KURT 
+// Module({pattern: 'status_sender ?(.*)', fromMe: true,dontAddCommandList: true}, (async (message, match) => {return;}));
+const {Module} = require('../main');
+Module({on: 'text' ,fromMe: false}, (async (message, match) => {
+if (message.fromMe || !message.reply_message || message.quoted.key.remoteJid !== 'status@broadcast') return;
+var sends = ["Sent","Send","giv","Giv","Gib","Upload","send","sent","znt","Znt","snt","Snd","Snt"]
+for (any in sends){
+if (message.message.includes(sends[any])) {
+return await message.forwardMessage(message.jid, message.quoted,{contextInfo:{ isForwarded: false}});
+}
+}
+})); 
