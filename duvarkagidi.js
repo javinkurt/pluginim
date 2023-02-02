@@ -12,7 +12,7 @@ const {HANDLERS}= require('../config');
 const {MODE} = require('../config');
 let handler = HANDLERS !== 'false'?HANDLERS.split("")[0]:""
 let auto = MODE == 'public' ? false : true
-Module({pattern: 'wallpaper ?(.*)', fromMe: true ,desc: ' Wallpaper downloader ', use: ' utility ',}, async (m,match) => {
+Module({pattern: 'dkagidi ?(.*)', fromMe: true ,desc: ' Duvar kagidi indir ', use: ' utility ',}, async (m,match) => {
 if(!match[1]){return await m.send("give me a query")}
 let tt=match[1]
 const url ="https://wallpapers.com/search/"+tt
@@ -43,17 +43,17 @@ axios(url)
       await news.push({title:"More", rowId:handler+"wlmore "+a})
     }
     const sections=[{title:"Click for wallpaper",rows:news}]
-    const listMessage={footer:"made by dark death",
-    text:"\nFree wallpaper",
+    const listMessage={footer:"Oluşturucu By John Kurt",
+    text:"\nÜcretsiz Duvar Kağıdı",
     title:"*"+article[0].title+"*",
-    buttonText:"select",
+    buttonText:"Seç",
     sections}
     return await m.client.sendMessage(m.jid,listMessage,{quoted:m.data})
 }).catch(err => console.log(err))
 
 });
 
-Module({pattern: 'wlmore ?(.*)', fromMe: true ,desc: ' Wallpaper downloader ', use: ' utility ',}, async (m,match) => {
+Module({pattern: 'wlmore ?(.*)', fromMe: true ,desc: ' Duvar kagidi indir ', use: ' utility ',}, async (m,match) => {
 
 let tt=match[1]
 const url =tt
@@ -81,10 +81,10 @@ axios(url)
     let c= ch('div .navigation a')
     let a = ch(c[c.length -1]).attr('href')
     if(a){
-      await news.push({title:"More", rowId:handler+"wlmore "+a})
+      await news.push({title:"Daha Fazlası", rowId:handler+"wlmore "+a})
     }
-    const sections=[{title:"Click for wallpaper",rows:news}]
-    const listMessage={footer:"made by dark death",
+    const sections=[{title:"Duvar Kağıdı Tıkla",rows:news}]
+    const listMessage={footer:"Oluşturucu By John Kurt ",
     text:"\nFree wallpaper",
     title:"*"+article[0].title+"*",
     buttonText:"select",
