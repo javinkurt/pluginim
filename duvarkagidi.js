@@ -13,7 +13,7 @@ const {MODE} = require('../config');
 let handler = HANDLERS !== 'false'?HANDLERS.split("")[0]:""
 let auto = MODE == 'public' ? false : true
 Module({pattern: 'dkagidi ?(.*)', fromMe: true ,desc: ' Duvar kagidi indir ', use: ' utility ',}, async (m,match) => {
-if(!match[1]){return await m.send("give me a query")}
+if(!match[1]){return await m.send("ah bebegim yanlis yaziyorsuuunn")}
 let tt=match[1]
 const url ="https://tr.pinterest.com/search/"+tt
 let news=[]
@@ -105,7 +105,7 @@ axios(url)
     const article= []
     
     
-    let a = "tr.pinterest.com/"+ch('.img-unit a').attr('href')
+    let a = "https://tr.pinterest.com"+ch('.img-unit a').attr('href')
     console.log(a);
     let igbuffer = await skbuffer(a)
     let data=await getVideoDimensions(igbuffer)
