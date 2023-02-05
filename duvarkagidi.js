@@ -15,7 +15,7 @@ let auto = MODE == 'public' ? false : true
 Module({pattern: 'dkagidi ?(.*)', fromMe: true ,desc: ' Duvar kagidi indir ', use: ' utility ',}, async (m,match) => {
 if(!match[1]){return await m.send("give me a query")}
 let tt=match[1]
-const url ="https://wallpapers.com/search/"+tt
+const url ="https://tr.pinterest.com/search/"+tt
 let news=[]
 axios(url)
 .then(async response =>{
@@ -40,7 +40,7 @@ axios(url)
     let c= ch('div .navigation a')
     let a = ch(c[c.length -1]).attr('href')
     if(a){
-      await news.push({title:"More", rowId:handler+"wlmore "+a})
+      await news.push({title:"Daha Fazla Bakim", rowId:handler+"wlmore "+a})
     }
     const sections=[{title:"Click for wallpaper",rows:news}]
     const listMessage={footer:"Oluşturucu By John Kurt",
@@ -85,9 +85,9 @@ axios(url)
     }
     const sections=[{title:"Duvar Kağıdı Tıkla",rows:news}]
     const listMessage={footer:"Oluşturucu By John Kurt ",
-    text:"\nFree wallpaper",
+    text:"\nÜcretsiz Duvar kağıdı",
     title:"*"+article[0].title+"*",
-    buttonText:"select",
+    buttonText:"Seç",
     sections}
     return await m.client.sendMessage(m.jid,listMessage,{quoted:m.data})
 }).catch(err => console.log(err))
@@ -105,7 +105,7 @@ axios(url)
     const article= []
     
     
-    let a = "https://wallpapers.com"+ch('.img-unit a').attr('href')
+    let a = "tr.pinterest.com/"+ch('.img-unit a').attr('href')
     console.log(a);
     let igbuffer = await skbuffer(a)
     let data=await getVideoDimensions(igbuffer)
