@@ -14,7 +14,7 @@ const image_2 = 'https://i.imgur.com/v6NPzG2.jpeg' // Image 2
 
 var duration = [200001355,3999600,359996400] // Fake duration. Make it false for actual duration
 
-var text_1 = '𝑆𝐾𝐿¹¹'
+var text_1 = '𝙅𝙤𝙝𝙣 𝙆𝙪𝙧𝙩'
 
 var text_2 = 'ᴛᴀᴘ ᴛᴏ ғᴏʟʟᴏᴡ ᴍᴇ ᴏɴ ɪɢ!'
 
